@@ -1,5 +1,6 @@
-import { View, Image, Text, StyleSheet } from "react-native";
-import { Entypo, EvilIcons } from "@expo/vector-icons";
+import { View, Image, Text, StyleSheet, Pressable } from "react-native";
+import { Entypo } from "@expo/vector-icons";
+import { Link } from "expo-router";
 
 
 import { TweetType } from "../types";
@@ -14,7 +15,11 @@ type TweetProps = {
 
 const Tweet = ({ tweet }: TweetProps) => {
   return (
-    <View style={styles.container}>
+    <Link href={"/tweet/abc"} asChild>
+    <Pressable style={styles.container}>
+      
+
+
       <Image src={tweet.user.image} style={styles.userImage} />
       <View style={styles.mainContainer}>
         <View style={{ flexDirection: "row" }}>
@@ -48,7 +53,8 @@ const Tweet = ({ tweet }: TweetProps) => {
 
         </View>
       </View>
-    </View>
+    </Pressable>
+    </Link>
   );
 };
 
