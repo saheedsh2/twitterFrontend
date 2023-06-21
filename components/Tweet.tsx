@@ -1,36 +1,16 @@
 import { View, Image, Text, StyleSheet } from "react-native";
 import { Entypo, EvilIcons } from "@expo/vector-icons";
 
-import tweets from "../assets/data/tweets";
+
 import { TweetType } from "../types";
+
+import IconButton from "./IconButton";
 
 type TweetProps = {
   tweet: TweetType;
 };
 
-type IconButtonProps = {
-  icon: React.ComponentProps<typeof EvilIcons>['name'];
-  text?: string | number;
 
-}
-
-const IconButton = ({icon, text}: IconButtonProps) => {
-  return (
-    <View style={{flexDirection:"row", alignItems: 'center'}}>
-
-    {/* Icon */}
-
-    <EvilIcons  name={icon} size={22} color="gray"/>
-
-    {/* Number */}
-    <Text style={{fontSize: 12, color: 'gray'}}>{text}</Text>
-
-
-  </View>
-
-  )
-
-}
 
 const Tweet = ({ tweet }: TweetProps) => {
   return (
